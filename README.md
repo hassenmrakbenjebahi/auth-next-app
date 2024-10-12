@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Description
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a web application developed with **Next.js** that allows users to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Create and authenticate their accounts via **OAuth2** (Google authentication).
+- Edit their personal information, including:
+  - First Name
+  - Last Name
+  - Date of Birth
+  - Address
+  - Phone Number
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **OAuth2 Authentication**:  
+   Users can sign in using their Google accounts for secure and easy authentication.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Profile Management**:  
+   After authentication, users can modify their profile information. The editable fields include their first name, last name, date of birth, address, and phone number.
 
-## Learn More
+3. **Address Validation**:  
+   To ensure the validity of the address, the application integrates with the API from **[adresse.data.gouv.fr](https://adresse.data.gouv.fr/api-doc/adresse)**.  
+   - The user’s address must be located within a **50 km radius of Paris**.
+   - If the address is beyond this range or invalid, the application will return an error, and the user will need to provide a valid address.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**: For server-side rendering and creating a React-based web application.
+- **Formik & Yup**: For handling forms and validation.
+- **NextAuth**: For managing authentication with OAuth2.
+- **axios**: To communicate with the external API for address validation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Integration
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **[adresse.data.gouv.fr API](https://adresse.data.gouv.fr/api-doc/adresse)**:  
+   This API is used to validate the user's address and calculate the distance from Paris to ensure it complies with the condition of being within 50 km.
