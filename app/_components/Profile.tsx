@@ -65,6 +65,7 @@ export default function Profile() {
       setAddressError("Error validating address");
       return false;
     }
+    
   };
 
   // Fonction for save modifications
