@@ -31,6 +31,8 @@ This project is a web application developed with **Next.js** that allows users t
 - **Formik & Yup**: For handling forms and validation.
 - **NextAuth**: For managing authentication with OAuth2.
 - **axios**: To communicate with the external API for address validation.
+- **sweetAlert2**: A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes.
+
 
 ## API Integration
 
